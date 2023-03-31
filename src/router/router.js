@@ -1,22 +1,27 @@
-import BlockPage from '@/pages/BlockPage'
-import Main from '@/pages/Main'
-import { createRouter, createWebHistory } from 'vue-router'
+import BlockPage from '@/pages/BlockPage';
+import Main from '@/pages/Main';
+import TxPage from '@/pages/TxPage';
+import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
   {
     path: '/',
     name: 'main',
-    component: Main
+    component: Main,
   },
   {
     path: '/block/:blockNumberOrHash',
-    component: BlockPage
+    component: BlockPage,
   },
-]
+  {
+    path: '/transaction/:txHash',
+    component: TxPage,
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
